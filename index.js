@@ -20,13 +20,12 @@ app.use(cors());
 
 app.get('/location', async(request, response) => {
     const data = await superagent.get(`https://us1.locationiq.com/v1/search.php?key=${process.env.LOCATION_IQ_KEY}&q=${request.query.search}&format=json`);
-
     const transformedLocationData = transformedLocation(data.body);
     response.json(transformedLocationData);
 });
 
 app.get('/weather', async(request, response) => {
-    const data = await superagent.get(`https://api.weatherbit.io/v2.0/forecast/daily?&lat=${request.query.latitude}&lot=${request.query.longitude}&key=${process.env.WEATHER_KEY}`);
+    const data = await superagent.get(`https://api.weatherbit.io/v2.0/forecast/daily?&lat=${request.query.latitude}&lon=${request.query.longitude}&key=${process.env.WEATHER_KEY}`);
     const transformedWeatherData = transformedWeather(data.body);
     response.json(transformedWeatherData);
 });
