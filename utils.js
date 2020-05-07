@@ -39,7 +39,7 @@ function transformedTrail(data) {
             condition_date: trail.conditionDate,
         };
     });
-    return transformedData.splice(0);
+    return transformedData.splice(0, 10);
 }
 
 

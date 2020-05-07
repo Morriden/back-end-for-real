@@ -48,7 +48,7 @@ app.get('/weather', async(request, response) => {
 
 app.get('/trails', async(request, response) => {
     try {
-        const data = await superagent.get(``);
+        const data = await superagent.get(`https://www.hikingproject.com/data/get-trails?lat=${request.query.latitude}&lon=${request.query.longitude}&maxDistance=200&key=${process.env.TRAIL_KEY}`);
         const transformedTrailData = transformedTrail(data.body);
         response.json(transformedTrailData);
     } catch (e) {
