@@ -2,7 +2,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 const express = require('express');
 const cors = require('cors');
-const { transformedLocation, transformedWeather } = require('./utils.js');
+const { transformedLocation, transformedWeather, transformedTrail } = require('./utils.js');
 const superagent = require('superagent');
 
 // const locationData = require('./data/geo.json');
@@ -37,6 +37,20 @@ app.get('/weather', async(request, response) => {
         const data = await superagent.get(`https://api.weatherbit.io/v2.0/forecast/daily?&lat=${request.query.latitude}&lon=${request.query.longitude}&key=${process.env.WEATHER_KEY}`);
         const transformedWeatherData = transformedWeather(data.body);
         response.json(transformedWeatherData);
+    } catch (e) {
+        console.error(e);
+        response.json({
+            status: 404,
+            responseText: `You've come too far fool!`,
+        });
+    }
+});
+
+app.get('/trails', async(request, response) => {
+    try {
+        const data = await superagent.get(``);
+        const transformedTrailData = transformedTrail(data.body);
+        response.json(transformedTrailData);
     } catch (e) {
         console.error(e);
         response.json({
