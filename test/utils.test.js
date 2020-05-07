@@ -114,15 +114,3 @@ test('test function of trail creation', function(assert) {
     // Make assertions about what is expected valid result
     assert.deepEqual(results, expected);
 });
-
-test('test function for null trails', function(assert) {
-    //Arrange
-    // Set up your parameters and expectations
-    const expected = {};
-    //Act 
-    // Call the function you're testing and set the result to a const
-    const results = transformedTrail(null);
-    //Assert
-    // Make assertions about what is expected valid result
-    assert.deepEqual(results, expected);
-});
