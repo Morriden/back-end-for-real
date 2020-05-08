@@ -1,0 +1,27 @@
+{
+  "name": "back-end-for-real",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "qunit test/tests.js",
+    "devbranch": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Morriden/back-end-for-real.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Morriden/back-end-for-real/issues"
+  },
+  "homepage": "https://github.com/Morriden/back-end-for-real#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "superagent": "^5.2.2"
+  }
+}
