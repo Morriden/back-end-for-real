@@ -37,6 +37,7 @@ function transformedTrail(data) {
             trail_url: trail.url,
             conditions: trail.conditionStatus,
             condition_date: trail.conditionDate,
+            condition_time: trail.conditionDate
         };
     });
     return transformedData.splice(0, 10);
