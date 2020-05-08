@@ -36,8 +36,7 @@ function transformedTrail(data) {
             summary: trail.summary,
             trail_url: trail.url,
             conditions: trail.conditionStatus,
-            condition_date: trail.conditionDate,
-            condition_time: trail.conditionDate
+            condition_date: trail.conditionDate.split(' ', 10),
         };
     });
     return transformedData.splice(0, 10);
